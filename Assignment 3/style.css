@@ -1,0 +1,11 @@
+.Addition-form{
+    width: 30%;
+    height: 50%;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.3em;
+    box-shadow: 1px 1px 1px black;
+}
+
+.btn{
+    background-color: aqua;
+}
