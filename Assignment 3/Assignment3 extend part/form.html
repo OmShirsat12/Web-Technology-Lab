@@ -1,0 +1,129 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .form-container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .input-element {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        label {
+            font-size: 14px;
+            margin-bottom: 5px;
+            display: block;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .gender-group {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 10px;
+        }
+        .form-group input[type="radio"] {
+            margin-right: 5px;
+        }
+        .submit-btn {
+            background-color: #329f36;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h1>Registration Form</h1>
+    <form name="ff1">
+        <div class="form-group">
+            <label for="name">Enter Name :</label>
+            <input type="text" name="Name" id="Num1" class="input-element" required>
+        </div>
+
+        <div class="form-group">
+            <label for="mail">Enter E-mail:</label>
+            <input type="email" name="mail" id="Num2" class="input-element" required>
+        </div>
+
+        <div class="form-group">
+            <label for="mobile">Enter Mobile Number:</label>
+            <input type="text" name="mobile" id="mobile" class="input-element" required>
+        </div>
+
+        <div class="form-group">
+            <label for="rollNo">Enter Roll Number:</label>
+            <input type="text" name="rollNo" id="rollNo" class="input-element" required>
+        </div>
+
+        <div class="form-group">
+            <label for="age">Select Age:</label>
+            <select id="age" name="Age">
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+            </select>
+        </div>
+
+        <div class="form-group gender-group">
+            <label for="gender">Select Gender:</label>
+            <div>
+                <input type="radio" id="Male" name="gender" value="Male">
+                <label for="Male">Male</label>
+            </div>
+            <div>
+                <input type="radio" id="Female" name="gender" value="Female">
+                <label for="Female">Female</label>
+            </div>
+        </div>
+
+        <div>
+            <input type="button" value="Submit" class="submit-btn" onclick="submitForm()">
+        </div>
+    </form>
+</div>
+
+<script>
+    function submitForm() {
+        alert("Form Submitted Successfully");
+    }
+</script>
+
+</body>
+</html>

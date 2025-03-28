@@ -1,0 +1,149 @@
+<main class="main">
+  <div class="container">
+    <h2>Registration Form</h2>
+    <form name="registrationForm" ng-submit="submitForm()" novalidate>
+      <div class="form-group">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" class="form-control" ng-model="user.firstName" required />
+      </div>
+      <div class="form-group">
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" class="form-control" ng-model="user.lastName" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" class="form-control" ng-model="user.email" required />
+      </div>
+      <div class="form-group">
+        <label for="age">Age:</label>
+        <input type="number" id="age" class="form-control" ng-model="user.age" required />
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone No.:</label>
+        <input type="tel" id="phone" class="form-control" ng-model="user.phone" required />
+      </div>
+      <div class="form-group gender-group">
+        <label>Select Gender:</label>
+        <div class="radio-group">
+          <input type="radio" id="Male" name="gender" value="Male">
+          <label for="Male">Male</label>
+          <input type="radio" id="Female" name="gender" value="Female">
+          <label for="Female">Female</label>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" class="form-control" ng-model="user.password" required />
+      </div>
+      <div class="form-group">
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" class="form-control" ng-model="user.confirmPassword" required />
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn" ng-disabled="registrationForm.$invalid">Register</button>
+      </div>
+    </form>
+  </div>
+  
+</main>
+
+<style>
+  body {
+    background: linear-gradient(150deg, #31eeff, #ffffff);
+    font-family: "Inter", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .container {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 360px;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+  }
+
+  h2 {
+    margin-bottom: 1rem;
+    color: #333;
+  }
+
+  .form-group {
+    margin-bottom: 0.8rem;
+    text-align: left;
+  }
+
+  label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    color: #555;
+  }
+
+  .form-control {
+    width: 100%;
+    padding: 8px;
+    border: 1.5px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .form-control:focus {
+    border-color: #ff4b2b;
+    outline: none;
+    box-shadow: 0px 0px 6px rgba(255, 75, 43, 0.4);
+  }
+
+  /* Inline Radio Button Styling */
+  .radio-group {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .radio-group input {
+    margin-right: 4px;
+  }
+
+  .btn {
+    background: #ff4b2b;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s ease-in-out;
+  }
+
+  .btn:hover {
+    background: #ff6b50;
+  }
+
+  .btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+  }
+</style>
+
+<script>
+  angular.module('app', [])
+    .controller('RegistrationController', function ($scope) {
+      $scope.user = {};
+      $scope.submitForm = function () {
+        if ($scope.registrationForm.$valid) {
+          alert("Registration successful!");
+        } else {
+          alert("Please fill in all required fields correctly.");
+        }
+      };
+    });
+</script>
